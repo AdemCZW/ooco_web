@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-t499aqbdp1zb1u1b*ox(l&2rgna^3@r%^nexxd&)u*c7=#qw)@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'oocoweb-production.up.railway.app', '127.0.0.1', 'www.ooco.com.tw', 'ooco.com.tw'
