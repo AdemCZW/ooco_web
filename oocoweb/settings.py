@@ -146,3 +146,5 @@ CKEDITOR_CONFIGS = {
         'width': '100%'
     },
 }
+
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
