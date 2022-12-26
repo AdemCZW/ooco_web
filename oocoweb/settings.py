@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-t499aqbdp1zb1u1b*ox(l&2rgna^3@r%^nexxd&)u*c7=#qw)@
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'oocoweb-production.up.railway.app', 'ooco.herokuapp.com', '127.0.0.1', 'www.ooco.com.tw', 'ooco.com.tw'
+    'oocoweb-production.up.railway.app', '127.0.0.1', 'www.ooco.com.tw', 'ooco.com.tw'
 ]
 
 
