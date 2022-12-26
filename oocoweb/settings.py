@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-t499aqbdp1zb1u1b*ox(l&2rgna^3@r%^nexxd&)u*c7=#qw)@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'oocoweb-production.up.railway.app', '127.0.0.1', 'www.ooco.com.tw', 'ooco.com.tw'
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_filters',
     'ckeditor',
     'web_app',
+    'corsheaders',
 
 ]
 
@@ -147,4 +148,4 @@ CKEDITOR_CONFIGS = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
+CSRF_TRUSTED_ORIGINS = ['https://*.ooco.com.tw', 'https://*.127.0.0.1']
