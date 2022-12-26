@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-t499aqbdp1zb1u1b*ox(l&2rgna^3@r%^nexxd&)u*c7=#qw)@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'oocoweb-production.up.railway.app', 'ooco.herokuapp.com', '127.0.0.1', 'www.ooco.com.tw', 'ooco.com.tw'
+]
 
 
 # Application definition
@@ -81,8 +83,12 @@ WSGI_APPLICATION = 'oocoweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '76ElmwVpEApUxDtZFtNL',
+        'HOST': 'containers-us-west-53.railway.app',
+        'PORT': '7620',
     }
 }
 
