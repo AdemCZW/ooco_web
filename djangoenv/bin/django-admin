@@ -1,4 +1,4 @@
-#!/Users/jhihweichan/oocoweb/djangoenv/bin/python3
+#!/Users/jhihweichan/oocoweb/djangoenv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
