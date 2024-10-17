@@ -84,12 +84,12 @@ WSGI_APPLICATION = 'oocoweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'DATABASE_PRIVATE_URL': 'postgresql://postgres:e6GBddbcb3e15Aa453BFb11E3D6B33dC@postgres.railway.internal:5432/railway',
-        'DATABASE_URL': 'postgresql://postgres:e6GBddbcb3e15Aa453BFb11E3D6B33dC@viaduct.proxy.rlwy.net:41935/railway',
+        'DATABASE_PRIVATE_URL': 'postgresql://postgres:AJNHgknUkPaAfpjIDJPhSHnpPpwKsKrx@autorack.proxy.rlwy.net:34165/railway',
+        'DATABASE_URL': 'postgresql://postgres:AJNHgknUkPaAfpjIDJPhSHnpPpwKsKrx@postgres.railway.internal:5432/railway',
         'PGDATABASE': 'railway',
-        'PGPASSWORD': 'e6GBddbcb3e15Aa453BFb11E3D6B33dC',
-        'PGHOST': 'viaduct.proxy.rlwy.net',
-        'PGPORT': '41935',
+        'PGPASSWORD': 'AJNHgknUkPaAfpjIDJPhSHnpPpwKsKrx',
+        'PGHOST': 'postgres.railway.internal',
+        'PGPORT': '5432',
         'PGUSER': 'postgres',
     }
 }
