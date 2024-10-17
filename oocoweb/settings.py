@@ -84,13 +84,12 @@ WSGI_APPLICATION = 'oocoweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'DATABASE_PRIVATE_URL': 'postgresql://postgres:AJNHgknUkPaAfpjIDJPhSHnpPpwKsKrx@autorack.proxy.rlwy.net:34165/railway',
-        'DATABASE_URL': 'postgresql://postgres:AJNHgknUkPaAfpjIDJPhSHnpPpwKsKrx@postgres.railway.internal:5432/railway',
-        'PGDATABASE': 'railway',
-        'PGPASSWORD': 'AJNHgknUkPaAfpjIDJPhSHnpPpwKsKrx',
-        'PGHOST': 'postgres.railway.internal',
-        'PGPORT': '5432',
-        'PGUSER': 'postgres',
+        'ENGINE': 'django.db.backends.postgresql',  # PostgreSQL 引擎
+        'NAME': 'railway',  # 数据库名称
+        'USER': 'postgres',  # 数据库用户名
+        'PASSWORD': 'AJNHgknUkPaAfpjIDJPhSHnpPpwKsKrx',  # 数据库密码
+        'HOST': 'postgres.railway.internal',  # 数据库主机
+        'PORT': '5432',  # 数据库端口
     }
 }
 
