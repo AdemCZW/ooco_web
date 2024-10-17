@@ -84,12 +84,12 @@ WSGI_APPLICATION = 'oocoweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',  # PostgreSQL 引擎
-        'NAME': 'railway',  # 数据库名称
-        'USER': 'postgres',  # 数据库用户名
-        'PASSWORD': 'AJNHgknUkPaAfpjIDJPhSHnpPpwKsKrx',  # 数据库密码
-        'HOST': 'postgres.railway.internal',  # 数据库主机
-        'PORT': '5432',  # 数据库端口
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'AJNHgknUkPaAfpjIDJPhSHnpPpwKsKrx',
+        'HOST': 'autorack.proxy.rlwy.net',  # 修改为 localhost
+        'PORT': '34165',
     }
 }
 
