@@ -1,14 +1,15 @@
 {% extends 'home.html' %} {% block content %}
 <!-- Start Hero Area -->
 
-{% for ooco in object_list %}
+{% for web_app in object_list %}
 
 <main id="main">
+
     <div class="site-section site-portfolio">
         <div class="container">
             <div class="row mb-5 col-xs-12 align-items-center">
                 <div class=" mb-4 mb-lg-0">
-                    即刻預約：<a class="" style="color: #009688;" href="{{ ooco.oc_mid_tit_001 }}">Booking</a>
+                    即刻預約：<a class="" style="color: #009688;" href="{{ web_app.oc_mid_tit_001 }}">Booking</a>
                     <p class="mb-0"></p>
                 </div>
                 <div class="col-md-12 col-lg-12 text-left text-lg-right">
@@ -26,7 +27,7 @@
                         <div class="work-info">
                             <h3>臘腸狗</h3>
                         </div>
-                        <img class="img-fluid" src="{{ ooco.oc_mid_txt_001 }}">
+                        <img class="img-fluid" src="{{ web_app.oc_mid_txt_001 }}">
                     </a>
                 </div>
                 <div class="item mid col-sm-6 col-md-6 col-lg-4">
@@ -34,7 +35,7 @@
                         <div class="work-info">
                             <h3>柯基</h3>
                         </div>
-                        <img class="img-fluid" src="{{ ooco.oc_mid_tit_002 }}">
+                        <img class="img-fluid" src="{{ web_app.oc_mid_tit_002 }}">
                     </a>
                 </div>
                 <div class="item smd col-sm-6 col-md-6 col-lg-4">
@@ -42,7 +43,7 @@
                         <div class="work-info">
                             <h3>博美</h3>
                         </div>
-                        <img class="img-fluid" src="{{ ooco.oc_mid_txt_002 }}">
+                        <img class="img-fluid" src="{{ web_app.oc_mid_txt_002 }}">
                     </a>
                 </div>
                 <div class="item mid col-sm-6 col-md-6 col-lg-4">
@@ -50,7 +51,7 @@
                         <div class="work-info">
                             <h3>柴犬</h3>
                         </div>
-                        <img class="img-fluid" src="{{ ooco.oc_mid_tit_003 }}">
+                        <img class="img-fluid" src="{{ web_app.oc_mid_tit_003 }}">
                     </a>
                 </div>
                 <div class="item smd col-sm-6 col-md-6 col-lg-4">
@@ -58,7 +59,7 @@
                         <div class="work-info">
                             <h3>吉娃娃</h3>
                         </div>
-                        <img class="img-fluid" src="{{ ooco.oc_mid_txt_003 }}">
+                        <img class="img-fluid" src="{{ web_app.oc_mid_txt_003 }}">
                     </a>
                 </div>
                 <div class="item mid col-sm-6 col-md-6 col-lg-4">
@@ -66,7 +67,7 @@
                         <div class="work-info">
                             <h3>雪納瑞</h3>
                         </div>
-                        <img class="img-fluid" src="{{ ooco.oc_mid_tit_004 }}">
+                        <img class="img-fluid" src="{{ web_app.oc_mid_tit_004 }}">
                     </a>
                 </div>
             </div>
@@ -80,7 +81,7 @@
                     <h3 class="h3 heading text-center">注意事項</h3>
 
 
-                    {{ ooco.oc_dog_ctn_001|safe }}
+                    {{ web_app.oc_dog_ctn_001|safe }}
 
                 </div>
             </div>
@@ -100,17 +101,17 @@
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4">
                     <span class="la la-paw la-3x mb-4"></span>
                     <h4 class="h4 mb-2">小美容</h4>
-                    {{ ooco.oc_dog_ctn_002|safe }}
+                    {{ web_app.oc_dog_ctn_002|safe }}
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4">
                     <span class="la la-scissors la-3x mb-4"></span>
                     <h4 class="h4 mb-2">大美容</h4>
-                    {{ ooco.oc_dog_ctn_003|safe }}
+                    {{ web_app.oc_dog_ctn_003|safe }}
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4">
                     <span class="la la-cab la-3x mb-4"></span>
                     <h4 class="h4 mb-2">免費接送到府服務</h4>
-                    {{ ooco.oc_dog_ctn_004|safe }}
+                    {{ web_app.oc_dog_ctn_004|safe }}
                 </div>
             </div>
         </div>
@@ -124,12 +125,12 @@
                     <p></p>
                     <div class="row">
                         <div class="col-sm-12 col-md-6 col-lg-6">
-                            {{ ooco.oc_dog_ctn_005|safe }}
+                            {{ web_app.oc_dog_ctn_005|safe }}
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-lg-6">
                             <ul class="list-unstyled list-line">
-                                {{ ooco.oc_dog_ctn_006|safe }}
+                                {{ web_app.oc_dog_ctn_006|safe }}
 
                             </ul>
                         </div>
@@ -137,14 +138,14 @@
                 </div>
                 <div class="row col-md-12">
                     <div class="col-md-3 col-sm-6 col-xs-6 lic-01">
-                        <img class="img-fluid" src="{{ ooco.oc_dog_ph_001 }}">
+                        <img class="img-fluid" src="{{ web_app.oc_dog_ph_001 }}">
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6 lic-01">
-                        <img class="img-fluid" src="{{ ooco.oc_dog_ph_002 }}"></div>
+                        <img class="img-fluid" src="{{ web_app.oc_dog_ph_002 }}"></div>
                     <div class="col-md-3 col-sm-6 col-xs-6 lic-01">
-                        <img class="img-fluid" src="{{ ooco.oc_dog_ph_003 }}"></div>
+                        <img class="img-fluid" src="{{ web_app.oc_dog_ph_003 }}"></div>
                     <div class="col-md-3 col-sm-6 col-xs-6 lic-01">
-                        <img class="img-fluid" src="{{ ooco.oc_dog_ph_004 }}"></div>
+                        <img class="img-fluid" src="{{ web_app.oc_dog_ph_004 }}"></div>
 
                 </div>
             </div>
@@ -156,8 +157,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <p class="mb-1" type="phone">LINE-ID：<a style="color: #009688;" href="{{ ooco.oc_dog_line }}">{{ ooco.oc_dog_line }}</a></p>
-                <p class="mb-1" type="mail">連絡信箱:<a style="color: #009688;" href="mailto:{{ ooco.oc_dog_mail }}">{{ ooco.oc_dog_mail }}</a></p>
+                <p class="mb-1" type="phone">LINE-ID：<a style="color: #009688;" href="{{ web_app.oc_dog_line }}">{{ web_app.oc_dog_line }}</a></p>
+                <p class="mb-1" type="mail">連絡信箱:<a style="color: #009688;" href="mailto:{{ web_app.oc_dog_mail }}">{{ web_app.oc_dog_mail }}</a></p>
                 <p class="mb-1" type="phone">聯絡電話：{{ ooco.oc_dog_phone }}</p>
                 <p class="mb-1" type="address">店面地址：{{ ooco.oc_dog_adr }}</p>
                 <p class="mb-1">&copy; Copyright Grooming. All Rights Reserved</p>

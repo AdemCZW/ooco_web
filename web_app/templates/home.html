@@ -85,10 +85,39 @@
         </div>
     </nav>
 
+    <div class="container my-5">
+        <div class="row text-center">
+            <!-- Range Rover Section -->
+            <div class="col-12 col-md-4 mb-4">
+                <div class="model" id="range-rover">
+                    <h2 class="model-title">RANGE ROVER</h2>
+                    <button class="btn btn-light btn-enter">進入</button>
+                </div>
+            </div>
+
+            <!-- Defender Section -->
+            <div class="col-12 col-md-4 mb-4">
+                <div class="model" id="defender">
+                    <h2 class="model-title">DEFENDER</h2>
+                    <button class="btn btn-light btn-enter">進入</button>
+                </div>
+            </div>
+
+            <!-- Discovery Section -->
+            <div class="col-12 col-md-4 mb-4">
+                <div class="model" id="discovery">
+                    <h2 class="model-title">DISCOVERY</h2>
+                    <button class="btn btn-light btn-enter">進入</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- ========================= header end ========================= -->
 
-    {% block content %} {% endblock %}
+    <!--{% block content %} {% endblock %}-->
 
 
     <!-- Vendor JS Files -->
@@ -103,7 +132,35 @@
 
     <!-- Template Main JS File -->
     <script src="{% static 'ooco/assets/js/main.js' %}"></script>
-
+    <style>
+        .model {
+            position: relative;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .model-title {
+            position: absolute;
+            top: 40%;
+            font-size: 1.5em;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        .btn-enter {
+            position: absolute;
+            bottom: 20px;
+            z-index: 1;
+        }
+    </style>
 </body>
 
 </html>
