@@ -39,3 +39,4 @@ typing_extensions==4.9.0
 virtualenv==20.25.0
 whitenoise==6.6.0
 zope.interface==6.1
+django-filter>=21.1
