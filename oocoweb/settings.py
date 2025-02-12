@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'oocoweb.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse('postgresql://postgres:e6GBddbcb3e15Aa453BFb11E3D6B33dC@viaduct.proxy.rlwy.net:41935/railway')
+    'default': dj_database_url.parse('postgresql://postgres:AJNHgknUkPaAfpjIDJPhSHnpPpwKsKrx@postgres.railway.internal:5432/railway')
 }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
