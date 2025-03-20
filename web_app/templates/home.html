@@ -37,62 +37,53 @@
 
         gtag('config', 'G-2LY7R53MD5');
     </script>
+    <script>
+        function closePopup() {
+            document.querySelector('.popup-overlay').style.display = 'none';
+        }
+    </script>
 </head>
 
 <body>
-    <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
-        <div class="container py-2 py-md-5">
-            <div class="row align-items-start">
-                <div class="col-md-2">
-                    <ul class="custom-menu">
-                        <li class="active"><a href="index.html">首頁</a></li>
-                        <li><a href="booking.html">預約</a></li>
-                        <li>
-                            <a href="works.html"></a>
-                        </li>
-                        <li>
-                            <a href="contact.html"></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-6 d-none d-md-block  mr-auto">
-                    <div class="tweet d-flex">
-                        <span class=" text-white mt-2 mr-3"></span>
-                        <div>
-                            <p><em><br> <a href="#"></a></em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-none d-md-block">
-                    <h3></h3>
-                    <p> <br>
-                        <a href="#"></a>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
     <nav class="navbar navbar-light custom-navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">OOCO-歐酷</a>
-
             <a href="" class="burger" data-toggle="collapse" data-target="#main-navbar">
                 <span></span>
             </a>
-
         </div>
     </nav>
 
+    <div id="main-body">
+        <!-- 彈出層 -->
+        <div class="popup-overlay">
+            <div class="popup-content">
+                <div class="container py-4">
+                    <div class="row g-4">
+                        <!-- 探索車輛 -->
+                        <div class="col-12 col-md-6">
+                            <div class="option-card">
+                                <h3>寵物住宿</h3>
+                                <p>Pet Boarding</p>
+                                <button>coming soon</button>
+                            </div>
+                        </div>
+                        <!-- 購買與服務 -->
+                        <div class="col-12 col-md-6">
+                            <div class="option-card">
+                                <h3>寵物美容</h3>
+                                <p>Pet Grooming</p>
+                                <button onclick="closePopup()">了解更多</button>
+                            </div>
+                        </div>
+                        <!-- 品牌與體驗 -->
 
-
-
-    <!-- ========================= header end ========================= -->
-
-    <!--{% block content %} {% endblock %}-->
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block content %} {% endblock %}
     <!-- Vendor JS Files -->
     <script src="{% static 'ooco/assets/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'ooco/assets/vendor/jquery/jquery-migrate.min.js' %}"></script>
@@ -105,33 +96,118 @@
 
     <!-- Template Main JS File -->
     <script src="{% static 'ooco/assets/js/main.js' %}"></script>
+
     <style>
-        .model {
+        /* 頁面整體背景 */
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            /* 白色背景 */
+            color: #333;
+            /* 深灰色文字 */
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        #main-body {
+            background-color: #ffffff;
+            /* 白色背景 */
             position: relative;
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            color: white;
+        }
+        /* 彈出層樣式 */
+        
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .popup-content {
+            width: 90%;
+            max-width: 1200px;
+            background-color: transparent;
+            /* 內容區無背景 */
+        }
+        /* 每個選項卡樣式 */
+        
+        .option-card {
+            background-color: #fff;
+            /* 白色背景 */
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px dashed #000;
+            /* 黑色虛線邊框 */
+            margin-bottom: 20px;
         }
         
-        .model-title {
-            position: absolute;
-            top: 40%;
-            font-size: 1.5em;
-            font-weight: bold;
-            z-index: 1;
+        .option-card h3 {
+            font-size: 2rem;
+            /* 標題文字大小 */
+            color: #333;
+            /* 深灰色標題 */
+            margin-top: 20px;
+            /* 使用文藝感較強的字體 */
+            letter-spacing: 1px;
+            /* 增加字距，提升優雅感 */
+            font-weight: 400;
+            /* 輕量化字重，增加清新感 */
         }
         
-        .btn-enter {
-            position: absolute;
-            bottom: 20px;
-            z-index: 1;
+        .option-card p {
+            font-size: 1.25rem;
+            /* 段落文字大小 */
+            color: #555;
+            /* 中灰色文字 */
+            padding: 0 15px;
+            font-family: 'Lora', serif;
+            /* 文清風格的襯線字體 */
+            line-height: 1.8;
+            /* 增加行距，讓文字更舒展 */
+            margin: 10px 0;
+            /* 增加上下間距 */
+        }
+        
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .option-card button {
+            background-color: #000;
+            /* 黑色按鈕 */
+            border: none;
+            padding: 10px 20px;
+            margin: 20px 0;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            /* 按鈕文字大小 */
+            font-family: 'Georgia', serif;
+            /* 按鈕也使用文藝字體 */
+            letter-spacing: 1px;
+            /* 增加字距 */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            /* 增加動畫效果 */
+        }
+        
+        .option-card button:hover {
+            background-color: #333;
+            /* 懸停時變為深灰色 */
+            transform: scale(1.05);
+            /* 懸停時微微放大，增加互動感 */
         }
     </style>
 </body>
