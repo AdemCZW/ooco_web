@@ -1,7 +1,7 @@
 {% extends 'home.html' %} {% block content %}
 <!-- Start Hero Area -->
 
-{% for web_app in object_list %}
+{% for web_app in object_list %} {% load static %}
 
 <main id="main">
 
@@ -27,7 +27,7 @@
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                     <span class="las la-tint la-3x mb-4"></span>
                     <h4 class="h4 mb-2">洗劑採用</h4>
-                    <P>天然萃取草本沐浴乳（這個口味我再補給你） 美國SUPER CLEANING SHAMPOOO 超級保濕洗毛精、 美國Super Rich Protein Conditioner 高蛋白潤絲護毛精、 SPA 採用美國Product Stabilizer穩定毛髮結構重生劑
+                    <P>天然萃取草本沐浴乳美國SUPER CLEANING SHAMPOOO 超級保濕洗毛精、 美國Super Rich Protein Conditioner 高蛋白潤絲護毛精、 SPA 採用美國Product Stabilizer穩定毛髮結構重生劑
                     </P>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3">
@@ -35,11 +35,70 @@
                     <h4 class="h4 mb-2">免費接送到府服務</h4>
                     {{ web_app.oc_dog_ctn_004|safe }}
                 </div>
-
-
             </div>
         </div>
     </div>
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-5">
+                    <h3 class="h3 heading">寵物美容空間</h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+
+                    <h4 class="h4 mb-2">美容區（大型交誼廳）</h4>
+                    大型美容包廂（半開放式）<br> 超厚隔音牆，阻隔外在噪音減敏 <br>智慧溫、濕度控制+空氣清淨機 <br>可同時三五好友一起來美容，主人允許且美容師看照情況下，與其它孩子互動交朋友 <br>內拉式安全門
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+
+                    <h4 class="h4 mb-2">美容區（大型犬美容區）</h4>
+                    獨立專區美容包廂 <br>180cm加大寵物美容桌 <br>雙層強化安全玻璃 <br>超大獨立空間，可同時容納三隻大型犬 （一家人一起不孤單） <br>智慧溫、濕度控制+空氣清淨機 <br>橫開式安全門+安全鎖
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+
+                    <h4 class="h4 mb-2">美容區（貓咪美容區）</h4>
+                    獨立美容包廂（半開放式） <br>超厚隔音牆，阻隔外在噪音減敏 <br>智慧溫、濕度控制+空氣清淨機 <br>可調式LED燈，可調整降低燈光對毛孩刺激 <br>內拉式安全門
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+
+                    <h4 class="h4 mb-2">沐浴區</h4>
+                    <br>雙浴缸，好友一起洗澡不孤單 <br>智慧溫、濕度控制 <br>恆溫防燙裝置 <br>多段可調花灑
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row justify-content-center text-center mb-4">
+            <div class="col-5">
+                <h3 class="h3 heading"></h3>
+                <p></p>
+            </div>
+        </div>
+        <div id="customImageCarousel" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-2 justify-content-center align-items-center" id="carouselImages">
+                        <!-- 初始顯示三張 -->
+                        <div class="col-4 col-md-4 image-wrapper">
+                            <img src="{% static 'ooco/assets/img/001.jpg' %}" class="d-block w-100 img-fluid rounded" alt="圖片1">
+                        </div>
+                        <div class="col-4 col-md-4 image-wrapper">
+                            <img src="{% static 'ooco/assets/img/002.jpg' %}" class="d-block w-100 img-fluid rounded" alt="圖片2">
+                        </div>
+                        <div class="col-4 col-md-4 image-wrapper">
+                            <img src="{% static 'ooco/assets/img/003.jpg' %}" class="d-block w-100 img-fluid rounded" alt="圖片3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="site-section">
         <div class="container">
             <div class="row justify-content-center mb-4">

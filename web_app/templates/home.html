@@ -42,12 +42,70 @@
             document.querySelector('.popup-overlay').style.display = 'none';
         }
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageContainer = document.querySelector('#carouselImages');
+            const images = [
+                "{% static 'ooco/assets/img/001.jpg' %}",
+                "{% static 'ooco/assets/img/002.jpg' %}",
+                "{% static 'ooco/assets/img/003.jpg' %}",
+                "{% static 'ooco/assets/img/004.jpg' %}",
+                "{% static 'ooco/assets/img/005.jpg' %}",
+                "{% static 'ooco/assets/img/006.jpg' %}"
+            ];
+            let currentIndex = 0;
+
+            // 自動輪播
+            function autoSlide() {
+                slideNext();
+            }
+
+            // 下一張
+            function slideNext() {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateCarousel();
+            }
+
+            // 更新輪播顯示
+            function updateCarousel() {
+                const wrappers = imageContainer.querySelectorAll('.image-wrapper');
+                // 從右至左滑動
+                imageContainer.style.transition = 'transform 0.6s ease-in-out';
+                imageContainer.style.transform = 'translateX(-33.33%)';
+
+                setTimeout(() => {
+                    const firstImage = wrappers[0];
+                    imageContainer.removeChild(firstImage);
+                    const newImage = createImageWrapper(images[(currentIndex + 2) % images.length]);
+                    imageContainer.appendChild(newImage);
+
+                    imageContainer.style.transition = 'none';
+                    imageContainer.style.transform = 'translateX(0)';
+                }, 600);
+            }
+
+            // 創建圖片容器
+            function createImageWrapper(src) {
+                const div = document.createElement('div');
+                div.className = 'col-4 col-md-4 image-wrapper';
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'd-block w-100 img-fluid rounded';
+                img.alt = 'carousel image';
+                div.appendChild(img);
+                return div;
+            }
+
+            // 自動播放
+            setInterval(autoSlide, 3000);
+        });
+    </script>
 </head>
 
 <body>
     <nav class="navbar navbar-light custom-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">OOCO-歐酷</a>
+            <a class="navbar-brand" href="/">OOCO-歐酷</a>
             <a href="" class="burger" data-toggle="collapse" data-target="#main-navbar">
                 <span></span>
             </a>
@@ -58,26 +116,24 @@
         <!-- 彈出層 -->
         <div class="popup-overlay">
             <div class="popup-content">
-                <div class="container py-4">
+                <div class="py-4">
                     <div class="row g-4">
-                        <!-- 探索車輛 -->
+                        <!-- 寵物住宿選項 -->
                         <div class="col-12 col-md-6">
-                            <div class="option-card">
+                            <div class="option-card option-boarding">
                                 <h3>寵物住宿</h3>
                                 <p>Pet Boarding</p>
                                 <button>coming soon</button>
                             </div>
                         </div>
-                        <!-- 購買與服務 -->
+                        <!-- 寵物美容選項 -->
                         <div class="col-12 col-md-6">
-                            <div class="option-card">
+                            <div class="option-card option-grooming">
                                 <h3>寵物美容</h3>
                                 <p>Pet Grooming</p>
                                 <button onclick="closePopup()">了解更多</button>
                             </div>
                         </div>
-                        <!-- 品牌與體驗 -->
-
                     </div>
                 </div>
             </div>
@@ -98,24 +154,7 @@
     <script src="{% static 'ooco/assets/js/main.js' %}"></script>
 
     <style>
-        /* 頁面整體背景 */
-        
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            /* 白色背景 */
-            color: #333;
-            /* 深灰色文字 */
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-        
-        #main-body {
-            background-color: #ffffff;
-            /* 白色背景 */
-            position: relative;
-        }
+        /* 彈出層樣式 */
         /* 彈出層樣式 */
         
         .popup-overlay {
@@ -124,90 +163,166 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            background-color: #fff;
         }
+        /* 內容區無背景 */
         
         .popup-content {
-            width: 90%;
-            max-width: 1200px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: transparent;
-            /* 內容區無背景 */
+            flex-wrap: wrap;
+            /* 允許換行 */
         }
         /* 每個選項卡樣式 */
         
         .option-card {
-            background-color: #fff;
-            /* 白色背景 */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px dashed #000;
-            /* 黑色虛線邊框 */
-            margin-bottom: 20px;
+            border: none;
+            height: calc(100vh - 40px);
+            /* 減去 margin */
+            width: calc(100vw / 2 - 40px);
+            /* 每個選項卡佔一半寬度，減去 margin */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 5rem;
+        }
+        /* 特定選項背景 */
+        
+        .option-boarding {
+            background-image: url("{% static 'ooco/assets/img/btm.jpg' %}");
+            /* 替換為你的圖片URL */
+            background-size: cover;
+            /* 讓背景圖片覆蓋整個容器 */
+            background-position: center;
+            /* 居中背景圖片 */
+            opacity: 1;
+            /* 設置透明度 */
         }
         
+        .option-grooming {
+            background-image: url("{% static 'ooco/assets/img/top.jpg' %}");
+            /* 替換為你的圖片URL */
+            background-size: cover;
+            /* 讓背景圖片覆蓋整個容器 */
+            background-position: center;
+            /* 居中背景圖片 */
+            opacity: 1;
+            /* 設置透明度 */
+        }
+        /* 調整標題和段落樣式 */
+        
         .option-card h3 {
-            font-size: 2rem;
-            /* 標題文字大小 */
-            color: #333;
-            /* 深灰色標題 */
+            font-size: 4rem;
+            color: #fff;
             margin-top: 20px;
-            /* 使用文藝感較強的字體 */
-            letter-spacing: 1px;
-            /* 增加字距，提升優雅感 */
-            font-weight: 400;
-            /* 輕量化字重，增加清新感 */
         }
         
         .option-card p {
-            font-size: 1.25rem;
-            /* 段落文字大小 */
-            color: #555;
-            /* 中灰色文字 */
+            font-size: 2.25rem;
+            color: #fff;
             padding: 0 15px;
-            font-family: 'Lora', serif;
-            /* 文清風格的襯線字體 */
             line-height: 1.8;
-            /* 增加行距，讓文字更舒展 */
             margin: 10px 0;
-            /* 增加上下間距 */
         }
+        /* 調整選項卡懸停效果 */
         
         .option-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+        /* 調整按鈕樣式 */
         
         .option-card button {
             background-color: #000;
-            /* 黑色按鈕 */
             border: none;
-            padding: 10px 20px;
+            padding: 25px 20px;
             margin: 20px 0;
             color: white;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1.25rem;
-            /* 按鈕文字大小 */
-            font-family: 'Georgia', serif;
-            /* 按鈕也使用文藝字體 */
+            font-size: 2.25rem;
             letter-spacing: 1px;
-            /* 增加字距 */
             transition: background-color 0.3s ease, transform 0.2s ease;
-            /* 增加動畫效果 */
         }
         
         .option-card button:hover {
             background-color: #333;
-            /* 懸停時變為深灰色 */
             transform: scale(1.05);
-            /* 懸停時微微放大，增加互動感 */
+        }
+        /* 媒體查詢：螢幕寬度小於768px時 */
+        /* 媒體查詢：螢幕寬度小於768px時 */
+        
+        @media (max-width: 768px) {
+            .popup-content {
+                flex-direction: column;
+            }
+            .option-card {
+                height: calc(50vh - 40px);
+                width: calc(95vw - 40px);
+                margin: 14px auto;
+                padding-top: 0rem;
+            }
+            .option-card h3 {
+                font-size: 3rem;
+            }
+            .option-card p {
+                font-size: 1.8rem;
+            }
+            .option-card button {
+                font-size: 1.8rem;
+                padding: 16px 16px;
+            }
+        }
+        
+        .carousel-inner {
+            overflow: hidden;
+        }
+        
+        .image-wrapper {
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+        
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 1;
+        }
+        /* RWD 調整 */
+        
+        @media (max-width: 767.98px) {
+            .carousel-control-prev,
+            .carousel-control-next {
+                display: none;
+                /* 小螢幕隱藏控制按鈕 */
+            }
+            .image-wrapper img {
+                max-height: 200px;
+                object-fit: cover;
+            }
         }
     </style>
 </body>
