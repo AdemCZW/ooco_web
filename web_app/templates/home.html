@@ -202,7 +202,7 @@
         /* 特定選項背景 */
         
         .option-boarding {
-            background-image: url("{% static 'ooco/assets/img/btm.jpg' %}");
+            background-image: url("{% static 'ooco/assets/img/top01.jpg' %}");
             /* 替換為你的圖片URL */
             background-size: cover;
             /* 讓背景圖片覆蓋整個容器 */
@@ -213,7 +213,7 @@
         }
         
         .option-grooming {
-            background-image: url("{% static 'ooco/assets/img/top.jpg' %}");
+            background-image: url("{% static 'ooco/assets/img/btm01.jpg' %}");
             /* 替換為你的圖片URL */
             background-size: cover;
             /* 讓背景圖片覆蓋整個容器 */
@@ -246,16 +246,17 @@
         /* 調整按鈕樣式 */
         
         .option-card button {
-            background-color: #000;
+            background-color: #6c757d;
             border: none;
-            padding: 25px 20px;
-            margin: 20px 0;
+            padding: 17px 0px;
+            margin: 0px auto;
             color: white;
             border-radius: 5px;
+            width: 35%;
             cursor: pointer;
-            font-size: 2.25rem;
+            font-size: 1.5rem;
             letter-spacing: 1px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.2s;
         }
         
         .option-card button:hover {
@@ -282,8 +283,9 @@
                 font-size: 1.8rem;
             }
             .option-card button {
-                font-size: 1.8rem;
-                padding: 16px 16px;
+                font-size: 1rem;
+                padding: 10px 0px;
+                width: 28%;
             }
         }
         
