@@ -135,6 +135,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="icon-popup">
+                        <a href="{{ web_app.oc_dog_fb }}" target="_blank">
+                            <span class="lab la-facebook-f"></span>
+                        </a>
+                        <a href="{{ web_app.oc_dog_ig }}" target="_blank">
+                            <span class="lab la-instagram"></span>
+                        </a>
+                        <a href="{{ web_app.oc_dog_line }}" target="_blank">
+                            <i class="lab la-line"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -190,7 +201,7 @@
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
-            height: calc(100vh - 40px);
+            height: calc(95vh - 40px);
             /* 減去 margin */
             width: calc(100vw / 2 - 40px);
             /* 每個選項卡佔一半寬度，減去 margin */
@@ -325,6 +336,30 @@
                 max-height: 200px;
                 object-fit: cover;
             }
+            .icon-popup {
+                display: flex;
+                justify-content: center;
+                /* 水平置中 */
+                align-items: center;
+                /* 垂直置中 */
+                text-align: center;
+                /* 文字內容置中 */
+                margin: 0 auto;
+                /* 讓區塊本身置中 */
+                width: fit-content;
+                /* 讓區塊大小適應內容 */
+            }
+            .icon-popup a {
+                font-size: 1.3rem;
+            }
+        }
+        
+        .icon-popup {
+            margin: 0px auto;
+        }
+        
+        .icon-popup a {
+            font-size: 2rem;
         }
     </style>
 </body>
